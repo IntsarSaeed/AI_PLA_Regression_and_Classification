@@ -24,7 +24,7 @@ class Perceptron(object):
 
     def train(self, inputs, labels):
         """
-        Method to taring the date
+        Method to train the date
         :parameter inputs: the inputs to the perceptron
         :parameter labels: the defined (known) label for a corresponding input
         :returns: The calculated new weights of the Network
