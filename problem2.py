@@ -1,5 +1,5 @@
 # Linear regression with multiple features using gradient decent
-# The script will stop once the solution converges
+# The script will stop after itr number of iterations
 # Written by: Intsar Saeed
 
 
@@ -60,8 +60,7 @@ class LinearRegression(object):
             for _ in range(num_of_itr):
                 f_x = self.X.dot(self.betas)  # predicted (hypothesis)
                 cost = -1 * (self.Y - f_x)  # Actual - hypothesis
-                #print(cost)
-                #print(self.X)
+
                 grd = self.X.T.dot(cost) / n
                 self.betas = self.betas - (self.alpha[i] * grd)
             print("alpha = ", float(self.alpha[i]), ", itr = ", float(num_of_itr), ", b0 = ", float(self.betas[0]),
@@ -87,6 +86,9 @@ def main():
     linear_regression.normalize_data()
     linear_regression.train()
 
+    # Close the file
+    print("Completed")
+    f.close()
 
 if __name__ == '__main__':
     main()
