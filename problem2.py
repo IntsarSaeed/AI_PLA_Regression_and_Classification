@@ -40,7 +40,6 @@ class LinearRegression(object):
             if i != (len(list(self.raw_data))-1):
                 self.X[i+1] = (self.raw_data[i] - mean) / std
             else:
-                #self.Y = (self.raw_data[i] - mean) / std
                 self.Y = self.raw_data[i]
         return
 
@@ -89,6 +88,7 @@ def main():
     # Close the file
     print("Completed")
     f.close()
+
 
 if __name__ == '__main__':
     main()

@@ -4,12 +4,9 @@
 
 
 import sys
-import statistics
 import numpy as np
 import pandas as pd
 from sklearn.svm import SVC
-import matplotlib.pyplot as plt
-from sklearn.neighbors import KNeighborsClassifier
 from sklearn.model_selection import train_test_split, GridSearchCV
 from sklearn.linear_model import LogisticRegression
 from sklearn.neighbors import KNeighborsClassifier
@@ -27,6 +24,7 @@ class Classifier(object):
         knn = KNeighborsClassifier(n_neighbors=3)
         knn.fit(self.raw_data[['A', 'B']], self.raw_data['label'])
 
+        # Split the data into training and testing part
         X_train, X_test, y_train, y_test = train_test_split(self.raw_data[['A', 'B']], self.raw_data['label'],
                                                             test_size=0.4, stratify=self.raw_data['label'])
 
